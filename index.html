@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Covai Education | Admission Guidance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#0284c7;--primary-hover:#0369a1;--secondary:#f59e0b;--secondary-hover:#d97706;--success:#16a34a;--bg-dark:#0f172a;--bg-light:#f8fafc;--card-bg:#fff;--text-main:#1e293b;--text-muted:#64748b;--border:#e2e8f0;--radius:12px;--shadow:0 10px 25px -5px rgba(0,0,0,.05),0 8px 10px -6px rgba(0,0,0,.05);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif}
+body{background:var(--bg-light);color:var(--text-main);line-height:1.6}
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:16px 6%;background:#fff;border-bottom:1px solid var(--border);position:sticky;top:env(safe-area-inset-top,0px);z-index:50}
+.logo{font-size:1.4rem;font-weight:800;color:var(--primary);letter-spacing:-.5px}
+.logo span{color:var(--secondary)}
+.nav-actions{display:flex;gap:10px}
+.btn-call{text-decoration:none;font-size:.88rem;font-weight:600;padding:9px 16px;border-radius:50px;border:1px solid var(--border);color:var(--text-main)}
+.btn-whatsapp{text-decoration:none;font-size:.88rem;font-weight:600;padding:9px 18px;border-radius:50px;background:#25d366;color:#fff;transition:opacity .2s}
+.btn-whatsapp:hover{opacity:.9}
+.hero{padding:80px 6% 60px;text-align:center;background:radial-gradient(circle at center,#0284c7 0%,#034f77 100%);color:#fff}
+.hero-badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);padding:5px 14px;border-radius:20px;font-size:.8rem;font-weight:600;margin-bottom:16px}
+.hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;line-height:1.25;max-width:800px;margin:0 auto 16px}
+.hero p{font-size:1rem;opacity:.92;max-width:650px;margin:0 auto 30px}
+.hero-cta-group{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--secondary);color:#fff;padding:13px 26px;border-radius:8px;font-weight:700;text-decoration:none;transition:background .2s}
+.btn-primary:hover{background:var(--secondary-hover)}
+.btn-secondary{background:#fff;color:var(--primary);padding:13px 26px;border-radius:8px;font-weight:700;text-decoration:none}
+.services{padding:60px 6%;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+.service-card{background:var(--card-bg);padding:28px 22px;border-radius:var(--radius);border:1px solid var(--border);box-shadow:var(--shadow);transition:transform .2s ease}
+.service-card:hover{transform:translateY(-4px)}
+.service-card .icon{font-size:1.8rem;margin-bottom:12px}
+.service-card h3{font-size:1.05rem;margin-bottom:8px}
+.service-card p{font-size:.88rem;color:var(--text-muted)}
+.form-section{padding:40px 6% 80px}
+.form-wrapper{max-width:560px;margin:0 auto;background:var(--card-bg);border-radius:16px;padding:40px 32px;border:1px solid var(--border);box-shadow:var(--shadow)}
+.form-header{text-align:center;margin-bottom:28px}
+.form-header h2{font-size:1.5rem;font-weight:700;margin-bottom:6px}
+.form-header p{font-size:.88rem;color:var(--text-muted)}
+.input-group{margin-bottom:18px;display:flex;flex-direction:column}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{font-size:.85rem;font-weight:600;margin-bottom:6px}
+input,select{padding:12px 14px;border-radius:8px;border:1px solid var(--border);background:#fff;color:var(--text-main);font-size:.92rem;outline:none;transition:border-color .2s,box-shadow .2s}
+input:focus,select:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(2,132,199,.15)}
+.error-input{border-color:#ef4444!important}
+.error-msg{color:#ef4444;font-size:.75rem;margin-top:4px;min-height:16px}
+.btn-submit{width:100%;padding:14px;margin-top:8px;background:var(--primary);color:#fff;border:none;border-radius:8px;font-size:1rem;font-weight:700;cursor:pointer;transition:background .2s ease}
+.btn-submit:hover{background:var(--primary-hover)}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(15,23,42,.6);backdrop-filter:blur(4px);z-index:100;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.active{display:flex}
+.modal-box{background:#fff;padding:32px 24px;border-radius:16px;max-width:400px;width:100%;text-align:center;box-shadow:0 20px 25px -5px rgba(0,0,0,.2)}
+.modal-icon{font-size:2.5rem;margin-bottom:12px}
+.modal-box h3{font-size:1.25rem;margin-bottom:8px}
+.modal-box p{font-size:.9rem;color:var(--text-muted);margin-bottom:20px}
+.btn-modal-close{background:var(--primary);color:#fff;border:none;padding:10px 24px;border-radius:8px;font-weight:600;cursor:pointer}
+footer{background:var(--bg-dark);color:#94a3b8;padding:40px 6%;text-align:center;font-size:.88rem}
+footer strong{color:#fff}
+footer small{display:block;margin-top:12px;font-size:.75rem}
+@media(max-width:600px){.grid-2{grid-template-columns:1fr;gap:0}.form-wrapper{padding:28px 18px}.navbar{padding:12px 4%}.btn-call,.btn-whatsapp{padding:8px 12px;font-size:.8rem}.logo{font-size:1.15rem}}
+</style>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">Covai<span>Education</span></div>
+  <div class="nav-actions">
+    <a href="tel:+916382106572" class="btn-call">Call Desk</a>
+    <a id="whatsappBtn" href="https://wa.me/916382106572?text=Hi%20Covai%20Education,%20admission%20details%20theva" class="btn-whatsapp" target="_blank" rel="noopener">Chat on WhatsApp</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-badge">2026 Admissions Open</div>
+  <h1>12th Mudichacha? Ungal Kanavu Kalloori Ungal Kaiyil!</h1>
+  <p>Top Engineering, Medical, Arts &amp; Science, Paramedical colleges-la free admission guidance and fee concession support perungal.</p>
+  <div class="hero-cta-group">
+    <a href="#enquiry" class="btn-primary">Apply for Free Guidance</a>
+    <a href="#services" class="btn-secondary">Explore Services</a>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="service-card"><div class="icon">🎓</div><h3>100% Free Guidance</h3><p>Cutoff-ku thagundha best colleges list and streamlined career roadmap.</p></div>
+  <div class="service-card"><div class="icon">🏛️</div><h3>Top College Tie-ups</h3><p>Coimbatore, Chennai &amp; Bangalore premium institutions direct support.</p></div>
+  <div class="service-card"><div class="icon">💰</div><h3>Scholarship Assistance</h3><p>Merit, sports, and reservation based fee concession guidance.</p></div>
+  <div class="service-card"><div class="icon">⚡</div><h3>Instant Seat Confirmation</h3><p>Hassle-free direct management seat booking for high-demand branches.</p></div>
+</section>
+
+<section class="form-section" id="enquiry">
+  <div class="form-wrapper">
+    <div class="form-header">
+      <h2>Free Admission Counselling Form</h2>
+      <p>Details fill pannunga, our expert team 30 mins-la call pannuvanga.</p>
+    </div>
+    <form id="admissionForm" novalidate>
+      <div class="input-group">
+        <label for="studentName">Student Full Name *</label>
+        <input type="text" id="studentName" name="name" placeholder="e.g. Guruprasath" required>
+        <span class="error-msg" id="nameError"></span>
+      </div>
+      <div class="input-group">
+        <label for="studentPhone">WhatsApp / Mobile Number *</label>
+        <input type="tel" id="studentPhone" name="phone" placeholder="e.g. 9876543210" required>
+        <span class="error-msg" id="phoneError"></span>
+      </div>
+      <div class="grid-2">
+        <div class="input-group">
+          <label for="studentStream">12th Stream *</label>
+          <select id="studentStream" name="stream" required>
+            <option value="">Select Stream</option>
+            <option value="Bio-Maths">Bio-Maths</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Commerce / Accounts">Commerce / Accounts</option>
+            <option value="Pure Science">Pure Science</option>
+            <option value="Vocational / Other">Other</option>
+          </select>
+          <span class="error-msg" id="streamError"></span>
+        </div>
+        <div class="input-group">
+          <label for="studentCutoff">Cut-off / Score</label>
+          <input type="number" id="studentCutoff" name="cutoff" placeholder="e.g. 175" min="0" max="600">
+          <span class="error-msg" id="cutoffError"></span>
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="studentCourse">Interested Course *</label>
+        <select id="studentCourse" name="course" required>
+          <option value="">Select Target Course</option>
+          <option value="Engineering (B.E / B.Tech)">Engineering (CSE, AI/DS, IT, ECE, Mech)</option>
+          <option value="Medical / BDS / Paramedical">Medical / Paramedical / Nursing / Pharmacy</option>
+          <option value="Arts & Science">Arts, Science, B.Com, BCA, BBA</option>
+          <option value="Agri / Law / Management">Agri / Law / Architecture / Management</option>
+        </select>
+        <span class="error-msg" id="courseError"></span>
+      </div>
+      <button type="submit" class="btn-submit" id="submitBtn"><span>Submit Application</span></button>
+    </form>
+  </div>
+</section>
+
+<div class="modal-overlay" id="successModal">
+  <div class="modal-box">
+    <div class="modal-icon">✅</div>
+    <h3>Request Submitted!</h3>
+    <p id="modalMessage">Thank you! Covai Education counsellor ungalai seekiram contact pannuvanga.</p>
+    <button class="btn-modal-close" id="closeModalBtn">Close</button>
+  </div>
+</div>
+
+<footer>
+  <p><strong>Covai Education Consultancy</strong></p>
+  <p>Gandhipuram, Coimbatore, Tamil Nadu | Helpline: +91 63821 06572</p>
+  <small>&copy; 2026 Covai Education. All rights reserved.</small>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('admissionForm');
+  const nameInput = document.getElementById('studentName');
+  const phoneInput = document.getElementById('studentPhone');
+  const streamInput = document.getElementById('studentStream');
+  const courseInput = document.getElementById('studentCourse');
+  const cutoffInput = document.getElementById('studentCutoff');
+  const nameError = document.getElementById('nameError');
+  const phoneError = document.getElementById('phoneError');
+  const streamError = document.getElementById('streamError');
+  const courseError = document.getElementById('courseError');
+  const modal = document.getElementById('successModal');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+  const modalMessage = document.getElementById('modalMessage');
+
+  function setError(input, el, msg) { input.classList.add('error-input'); el.textContent = msg; }
+  function clearError(input, el) { input.classList.remove('error-input'); el.textContent = ''; }
+
+  nameInput.addEventListener('input', () => clearError(nameInput, nameError));
+  phoneInput.addEventListener('input', () => clearError(phoneInput, phoneError));
+  streamInput.addEventListener('change', () => clearError(streamInput, streamError));
+  courseInput.addEventListener('change', () => clearError(courseInput, courseError));
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let isValid = true;
+
+    if (nameInput.value.trim().length < 3) {
+      setError(nameInput, nameError, 'Peyar sariyaaga type pannunga (Min 3 letters)');
+      isValid = false;
+    } else { clearError(nameInput, nameError); }
+
+    const phoneRegex = /^[6-9]\d{9}$/;
+    const cleanPhone = phoneInput.value.trim().replace(/\D/g, '');
+    if (!phoneRegex.test(cleanPhone)) {
+      setError(phoneInput, phoneError, '10-digit valid mobile number enter pannunga');
+      isValid = false;
+    } else { clearError(phoneInput, phoneError); }
+
+    if (!streamInput.value) {
+      setError(streamInput, streamError, '12th group select pannunga');
+      isValid = false;
+    } else { clearError(streamInput, streamError); }
+
+    if (!courseInput.value) {
+      setError(courseInput, courseError, 'Virumbum course select pannunga');
+      isValid = false;
+    } else { clearError(courseInput, courseError); }
+
+    if (isValid) {
+      const studentData = {
+        name: nameInput.value.trim(),
+        phone: cleanPhone,
+        stream: streamInput.value,
+        cutoff: cutoffInput.value.trim() || 'N/A',
+        course: courseInput.value,
+        timestamp: new Date().toISOString()
+      };
+      console.log('Submission Received:', studentData);
+      modalMessage.innerHTML = `Vanakam <strong>${studentData.name}</strong>, ungal registration record aagi vittadhu. Covai Education team <strong>${studentData.phone}</strong> number-ku call pannuvanga!`;
+      modal.classList.add('active');
+      form.reset();
+    }
+  });
+
+  closeModalBtn.addEventListener('click', () => modal.classList.remove('active'));
+  modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('active'); });
+});
+</script>
+</body>
+</html>
